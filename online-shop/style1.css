@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main{
+    background-image: linear-gradient(rgba(191, 172, 255, 0.295),rgba(128, 92, 247, 0.589)), url(images/background.png);
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+.h2{
+    font-size: 3rem;
+    padding: 2rem;
+}
+.coming-soon{
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10rem;
+}
+
+.countdown{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+   
+    
+}
+
+.day, 
+.hour, 
+.minute, 
+.second{
+    font-size: 3rem;
+}
+
+
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+nav img{
+    width: 40px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding: 8px 12px;
+
+}
+.nav-links ul li a{
+    color: rgb(0, 0, 0);
+    
+    text-decoration: none;
+    font-size: 13px;
+    
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2.5px;
+    background: #000000;
+    display: block;
+
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+
+}
+.burger:hover{
+    opacity: 0.6;
+}
+
+.burger div{
+    width: 26px;
+    height: 3.5px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+
+}
+
+
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(94, 0, 201);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+@keyframes navLinkFade{
+    from {
+        opacity: 0.3;
+       
+    }
+    to {
+        opacity: 1;
+        
+    }
+}
+
+
+@media screen and (max-width:760px){
+    body{
+        overflow: hidden;
+        
+    }
+    
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 91vh;
+        top: 9vh;
+        background:rgba(168, 142, 255, 0.986);
+        
+        z-index: 2;
+        justify-content: center;
+        background-size: 600%, 600%;
+        animation: gradient 10s ease infinite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translate(100%);
+        transition: transform 0.4s cubic-bezier(0, 0.45, 0.58, 1);
+    }
+    .nav-links ul li::after{
+        content: '';
+        width: 0%;
+        height: 2.5px;
+        background: #ffffff;
+        display: block;
+    
+        transition: 0.5s;
+    }
+    .nav-links ul li a{
+        color: rgb(255, 255, 255);
+        
+        text-decoration: none;
+        font-size: 13px;
+        
+    }
+    .nav-links ul li{
+        opacity: 0;
+        
+        
+    }
+    .burger{
+        display: block;
+    }
+    
+}
+@keyframes navLinkFade{
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
